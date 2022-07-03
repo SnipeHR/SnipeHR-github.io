@@ -1,0 +1,464 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <title>SnipeHR</title>
+  <meta content="" name="description">
+
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'img/logo_SnipeHR.png' %}" rel="icon">
+  <link href="{% static 'img/logo_SnipeHR.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet" type="text/css">
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+  <link href="{% static 'css/form_style.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: FlexStart - v1.9.0
+  * Template URL: https://bootstrapmade.com/flexstart-bootstrap-startup-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="home" class="logo d-flex align-items-center">
+        <img src="{% static 'img/logo.png' %}" alt="">
+        <span>SnipeHR</span>
+      </a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Accueil</a></li>
+          <li><a class="nav-link scrollto" href="#about">Service</a></li>
+          <li><a class="nav-link scrollto" href="#services">A propos</a></li>
+          <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li>
+          <li><a class="nav-link scrollto" href="#team">Team</a></li>
+          <li><a href="blog">Blog</a></li>
+          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#">Drop Down 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Drop Down 2</a></li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="getstarted scrollto" href="#about">Get Started</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+      <style>
+          @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Roboto:wght@300;500&display=swap");
+        * {
+          padding: 0;
+          margin: 0;
+          box-sizing: border-box;
+        }
+        section {
+          min-height: 95vh;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .container-sign {
+          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.199);
+          padding: 50px 30px;
+          border-radius: 10px;
+          min-width: 800px;
+          max-width: 1000px;
+          min-height: 500px;
+          margin: 0 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #f6f5f7;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .container-sign .form {
+          position: absolute;
+          top: 0;
+          text-align: center;
+          padding: 0 20px;
+          width: 50%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #f6f5f7;
+          transition: 0.7s ease-in-out transform;
+          overflow: hidden;
+        }
+        .container-sign .form.sign-in-form {
+          left: 0;
+        }
+        .container-sign .form.sign-up-form {
+          right: 0;
+        }
+        .container-sign .form .wrapper {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: 0.7s ease-in-out transform;
+        }
+        .container-sign .form.sign-in-form .wrapper {
+          transform: translateX(100%);
+        }
+        .container-sign .sign-in-form.active .wrapper {
+          transform: translateX(0);
+        }
+        .container-sign .form.sign-up-form .wrapper {
+          transform: translateX(-100%);
+        }
+        .container-sign .sign-up-form.active .wrapper {
+          transform: translateX(0);
+        }
+        .container-sign .form h1 {
+          font-family: "Montserrat";
+          font-size: 40px;
+          font-weight: 300;
+          text-transform: capitalize;
+          margin-bottom: 10px;
+        }
+        .container-sign .form p {
+          font-family: "Roboto";
+          font-weight: 500;
+          font-size: 14px;
+          text-transform: capitalize;
+          line-height: 25px;
+          margin-bottom: 30px;
+        }
+        .container-sign .form input {
+          display: block;
+          width: 300px;
+          margin: 0 auto;
+          margin-bottom: 15px;
+          height: 35px;
+          font-family: "Montserrat";
+          font-size: 14px;
+          padding-left: 15px;
+          border: none;
+          background-color: rgba(199, 197, 197, 0.425);
+          outline: none;
+        }
+        .container-sign .form input::placeholder {
+          color: rgba(0, 0, 0, 0.658);
+        }
+        .overlay-container .overlay button,
+        .container-sign .form button {
+          padding: 10px 50px;
+          border: none;
+          outline: none;
+          font-family: "Montserrat";
+          font-size: 18px;
+          background-color: #012970;
+          cursor: pointer;
+          color: #f6f5f7;
+        }
+        .container-sign .overlay-container {
+          position: absolute;
+          background-color: 012970;
+          left: 0;
+          top: 0;
+          width: 50%;
+          height: 100%;
+          overflow: hidden;
+          transition: 0.7s ease-in-out transform;
+        }
+
+        .container-sign .overlay-container .overlay {
+          background-image: url(https://images.unsplash.com/photo-1527689368864-3a821dbccc34?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80);
+          background-size: cover;
+          background-position: center center;
+          position: absolute;
+          left: 0%;
+          /* background-color: rebeccapurple; */
+          width: 200%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+          transition: 0.7s ease-in-out transform;
+          z-index: 1;
+        }
+        .container-sign .overlay::after {
+          content: "";
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          left: 0;
+          top: 0;
+          background-color: #012970;
+          z-index: -1;
+          opacity: 0.9;
+        }
+        .overlay-container .overlay .overlay-left,
+        .overlay-container .overlay .overlay-right {
+          flex-basis: 50%;
+          text-align: center;
+        }
+        .overlay-container .overlay .overlay-left {
+        }
+        .overlay-container .overlay h1 {
+          font-family: "Montserrat";
+          font-size: 40px;
+          font-weight: 300;
+          color: white;
+        }
+        .overlay-container .overlay p {
+          color: white;
+          font-family: "Roboto";
+          font-size: 25px;
+          font-weight: 300;
+        }
+        .overlay-container .overlay button {
+          background-color: white;
+          color: #4154f1;
+          margin-top: 20px;
+        }
+      </style>
+
+     <!-- Debut formulaire -->
+
+    <section class="inner-page">
+      <div class="container-sign">
+        <div class="form sign-in-form">
+          <div class="wrapper">
+              <script>
+                alert("Invalid Email or Password!");  // display string message
+            </script>
+            <form action="{% url 'login_form' %}" method="post" id="login_form">
+                {% csrf_token %}
+              <h1>Se connecter</h1>
+              <p></p>
+              <input type="email" placeholder="Email professionnel" id="email_hr" name="email_hr">
+              <input type="password" placeholder="Mot de passe" id="mdp_hr" name="mdp_hr">
+              <button type="submit" value="login_form">Connexion</button>
+            </form>
+          </div>
+        </div>
+        <div class="form sign-up-form active">
+          <div class="wrapper">
+            <form action="log_form" method="post" id="log_hr">
+                {% csrf_token %}
+              <h1>Inscription</h1>
+              <p></p>
+              <input type="text" placeholder="Nom Prénom" id="name_hr" name="name_hr">
+              <input type="email" placeholder="Email professionnel" id="email_hr" name="email_hr">
+                <input type="text" placeholder="Société" id="company_hr" name="company_hr">
+              <input type="password" placeholder="Mot de passe" id="mdp_hr" name="mdp_hr">
+
+
+                <div class="w3-container">
+                    <button value="log" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Valider</button>
+
+                  <div id="id01" class="w3-modal" >
+                    <div class="w3-modal-content" style="text-align: center;block-size: 25%;">
+                      <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                      <p>Inscription réussie✅</p>
+                      <p>Vous pouvez dès à présent vous connecter. </p>
+                    </div>
+                  </div>
+                </div>
+            </form>
+          </div>
+        </div>
+        <div class="overlay-container">
+          <div class="overlay">
+            <div class="overlay-left">
+              <h1>Créez un compte</h1>
+              <p>ou</p>
+              <button id="signInButton">Connectez-vous</button>
+            </div>
+            <div class="overlay-right">
+              <h1>Connectez-vous</h1>
+              <p>ou</p>
+              <button id="signUpButton">Créez votre compte</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+
+    <div class="footer-newsletter">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-12 text-center">
+            <h4>Our Newsletter</h4>
+            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+          </div>
+          <div class="col-lg-6">
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-5 col-md-12 footer-info">
+            <a href="home" class="logo d-flex align-items-center">
+              <img src="assets/img/logo.png" alt="">
+              <span>FlexStart</span>
+            </a>
+            <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+            <div class="social-links mt-3">
+              <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Product Management</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Graphic Design</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+            <h4>Contact Us</h4>
+            <p>
+              A108 Adam Street <br>
+              New York, NY 535022<br>
+              United States <br><br>
+              <strong>Phone:</strong> +1 5589 55488 55<br>
+              <strong>Email:</strong> info@example.com<br>
+            </p>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>FlexStart</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/flexstart-bootstrap-startup-template/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'vendor/purecounter/purecounter.js' %}"></script>
+  <script src="{% static 'vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'js/main.js' %}"></script>
+
+    <script>
+        const signIn = document.querySelector("#signInButton");
+        const signUp = document.querySelector("#signUpButton");
+        const signInForm = document.querySelector(".container-sign .sign-in-form");
+        const signUpForm = document.querySelector(".container-sign .sign-up-form");
+        const overlay_container = document.querySelector(
+          ".container-sign .overlay-container"
+        );
+        const overlay = document.querySelector(
+          ".container-sign .overlay-container .overlay"
+        );
+
+        signIn.addEventListener("click", () => {
+          overlay_container.style.transform = "translateX(100%)";
+          overlay.style.transform = "translateX(-50%)";
+          signInForm.classList.add("active");
+          signUpForm.classList.remove("active");
+        });
+        signUp.addEventListener("click", () => {
+          overlay_container.style.transform = "translateX(0)";
+          overlay.style.transform = "translateX(0)";
+          signUpForm.classList.add("active");
+          signInForm.classList.remove("active");
+        });
+    </script>
+
+</body>
+
+</html>

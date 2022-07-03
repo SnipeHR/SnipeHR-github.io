@@ -1,0 +1,279 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <title>Dashboard SnipeHR</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'img/logo_SnipeHR.png' %}" rel="icon">
+  <link href="{% static 'img/logo_SnipeHR.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'snipehrInterface/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'snipehrInterface/assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'snipehrInterface/assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'snipehrInterface/assets/vendor/quill/quill.snow.css' %}" rel="stylesheet">
+  <link href="{% static 'snipehrInterface/assets/vendor/quill/quill.bubble.css' %}" rel="stylesheet">
+  <link href="{% static 'snipehrInterface/assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'snipehrInterface/assets/vendor/simple-datatables/style.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'snipehrInterface/assets/css/style.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: NiceAdmin - v2.2.2
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="home" class="logo d-flex align-items-center">
+        <img src="{% static 'snipehrInterface/assets/img/SnipeHR_LSize.png' %}" alt="">
+        <span class="d-none d-lg-block">SnipeHR</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+        <li class="nav-item d-block d-lg-none">
+          <a class="nav-link nav-icon search-bar-toggle " href="#">
+            <i class="bi bi-search"></i>
+          </a>
+        </li><!-- End Search Icon-->
+
+
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="{% static 'snipehrInterface/assets/img/profile-loutre.jpg' %}" alt="Profile" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2">{{ name_hr }}</span>
+          </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6>{{ name_hr }}</h6>
+              <span>Data analyst</span>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="{% url 'user_profile' %}">
+                <i class="bi bi-person"></i>
+                <span>Mon profil</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="{% url 'user_profile' %}">
+                <i class="bi bi-gear"></i>
+                <span>Paramètres</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="faq">
+                <i class="bi bi-question-circle"></i>
+                <span>Besoin d'aide?</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="/">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Se déconnecter</span>
+              </a>
+            </li>
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="{% url 'home' %}">
+          <i class="bi bi-grid"></i>
+          <span>Tableau de bord</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-menu-button-wide"></i><span>Missions</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="{% url 'my_posts' %}">
+              <i class="bi bi-circle"></i><span>Mes missions</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'post_generator' %}">
+              <i class="bi bi-circle"></i><span>Générer nouvelle mission</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'upload_post' %}">
+              <i class="bi bi-circle"></i><span>Uploader nouvelle mission</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Components Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="messagerie">
+          <i class="bi bi-person"></i>
+          <span>Messagerie</span>
+        </a>
+      </li><!-- End Messagerie -->
+
+        <li class="nav-item">
+        <a class="nav-link collapsed" href="cv_details">
+          <i class="bi bi-journal-text"></i>
+          <span>Cvs</span>
+        </a>
+      </li><!-- End CV_details -->
+
+      <li class="nav-heading">Mon compte</li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="user_profile">
+          <i class="bi bi-person"></i>
+          <span>Mon profil</span>
+        </a>
+      </li><!-- End Profile Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="faq">
+          <i class="bi bi-question-circle"></i>
+          <span>F.A.Q</span>
+        </a>
+      </li><!-- End F.A.Q Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="pages-contact">
+          <i class="bi bi-envelope"></i>
+          <span>Contact</span>
+        </a>
+      </li><!-- End Contact Page Nav -->
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Messagerie</h1>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+
+
+              <!-- Recent Sales -->
+            <div class="col-12">
+              <div class="card recent-sales overflow-auto">
+
+                <div class="card-body">
+                  <h5 class="card-title">Historique des messages envoyés</h5>
+
+
+                            <!-- Default Accordion -->
+              <div class="accordion" id="accordionExample">
+                    {% for message in messages %}
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          {{ message.candidat }}, {{ message.date }}, {{ message.post }}
+                        </button>
+                      </h2>
+                      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                          {{ message.message }}
+                        </div>
+                      </div>
+                    </div>
+                  {% endfor %}
+              </div><!-- End Default Accordion Example -->
+
+                </div>
+              </div>
+            </div><!-- End Recent Sales -->
+
+
+        </div>
+
+
+              </form><!-- End General Form Elements -->
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'snipehrInterface/assets/vendor/apexcharts/apexcharts.min.js' %}"></script>
+  <script src="{% static 'snipehrInterface/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'snipehrInterface/assets/vendor/chart.js/chart.min.js' %}"></script>
+  <script src="{% static 'snipehrInterface/assets/vendor/echarts/echarts.min.js' %}"></script>
+  <script src="{% static 'snipehrInterface/assets/vendor/quill/quill.min.js' %}"></script>
+  <script src="{% static 'snipehrInterface/assets/vendor/simple-datatables/simple-datatables.js' %}"></script>
+  <script src="{% static 'snipehrInterface/assets/vendor/tinymce/tinymce.min.js' %}"></script>
+  <script src="{% static 'snipehrInterface/assets/vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'snipehrInterface/assets/js/main.js' %}"></script>
+
+</body>
+
+</html>
